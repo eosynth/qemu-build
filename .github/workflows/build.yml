@@ -29,6 +29,7 @@ jobs:
       - name: Build pve-qemu
         run: |
           cd pve-qemu
+          git reset --hard 59ab88deb698c905c85fdf71ad01c1ea5e44c1f5
           mk-build-deps --install
           mv debian/rules debian/rules.bak
           COMMAND=$(echo "pwd && mv ../../qemu-bypass.8.1.2.patch . && patch -p1 < qemu-bypass.8.1.2.patch")
